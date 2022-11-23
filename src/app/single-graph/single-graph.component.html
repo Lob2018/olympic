@@ -1,0 +1,18 @@
+<div
+  class="face-snap-card"
+  [ngClass]="{ snapped: buttonText === 'Oops, unsnap!' }"
+>
+  <h2>{{ graph.title | uppercase }}</h2>
+  <a routerLink="/graphs">Back</a>
+  <p>
+    Mis en ligne {{ graph.createdDate | date: "le  dd MMMM yyyy, à HH:mm" }}
+  </p>
+  <img [src]="graph.imageUrl" [alt]="graph.title" />
+  <p>{{ graph.description }}</p>
+  <p *ngIf="graph.location">Photo prise à {{ graph.location }}</p>
+  <button (click)="onAddSnap()">{{ buttonText }}</button>
+  <span [ngStyle]="{ color: 'rgb(0,' + graph.snaps + ',0)' }"
+    >🤌 {{ graph.snaps }}</span
+  >
+  <p>{{ 122422.467 | number }}</p>
+</div>

@@ -1,0 +1,8 @@
+<div
+  class="face-snap-card"
+  [ngClass]="{ snapped: buttonText === 'Oops, unsnap!' }"
+>
+  <h2>{{ graph.title | uppercase }}</h2>
+  <p>{{ graph.description }}</p>
+  <button (click)="onViewGraph()">VIEW</button>
+</div>
